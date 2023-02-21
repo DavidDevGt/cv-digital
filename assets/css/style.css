@@ -1,0 +1,97 @@
+/* Declarar variables */
+
+:root {
+
+    --tono: 324;
+    --complementario: 54;
+    --contraste: 214;
+
+    --color-principal: hsla(var(--tono), 100%, 40%, 1);
+    --color-principal-medio: hsla(var(--tono), 100%, 86%, 1);
+    --color-principal-claro: hsla(var(--tono), 100%, 98%, 1);
+    --color-principal-oscuro: hsla(var(--tono), 100%, 15%, 1);
+
+    --color-complementario: hsla(var(var(--complementario), 100%, 48%, 1));
+    --color-contraste-oscuro: hsla(var(var(--contraste), 13%, 10%, 1));
+    --color-contraste-media: hsla(var(var(--contraste), 15%, 40%, 1));
+
+    --color-blanco: white;
+
+    --fuente-principal: 'Poppins', sans-serif;
+
+    --ligth: 300;
+    --normal: 400;
+    --bold: 700;
+
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span {
+    color: var(--color-contraste-oscuro);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.ligth {
+    font-weight: var(--ligth);
+}
+.normal {
+    font-weight: var(--normal);
+}
+.bold {
+    font-weight: var(--bold);
+}
+
+/* Reset estilos del navegador */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente-principal);
+}
+
+/* PANTALLA MOBILE 0px a 764px */
+
+/* Sliders */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.page1, .page2 {
+    width: 100vw;
+}
+
+.page1 {
+    background-color: var(--color-blanco);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.page2 {
+    background-color: var(--color-blanco);
+    position: absolute;
+    opacity: .9;
+    min-height: 100vh;
+    transition: .5s all ease-in-out;
+    left: 100%; /* 100% = Desaparece, 0% = Aparece */
+    pointer-events: none;
+
+    /* Grid para Mobile y Tablet */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 60px 250px 120px;
+    grid: 20px;
+}
+
+.entrar {
+    left: 0%;
+    pointer-events: all;
+}
